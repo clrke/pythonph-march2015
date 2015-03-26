@@ -15,7 +15,7 @@ plt.show()
 
 from sklearn.svm import SVC
 
-classifier = SVC().fit(digits.data, digits.target)
+classifier = SVC(gamma=0.001).fit(digits.data, digits.target)
 
 random_indices = [123, 456, 789, 1059, 1289, 1567]
 
