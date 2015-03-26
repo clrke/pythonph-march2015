@@ -32,3 +32,17 @@ for i in range(6):
 	plt.title(predictions[i])
 
 plt.show()
+
+# scoring
+random_digits_target = [digits.target[i] for i in random_indices]
+print classifier.score(random_digits_data, random_digits_target)
+
+# real scoring
+training_data = digits.data[:1000]
+training_target = digits.target[:1000]
+
+test_data = digits.data[1000:]
+test_target = digits.target[1000:]
+
+classifier = SVC(gamma=0.001).fit(training_data, training_target)
+print classifier.score(test_data, test_target)
