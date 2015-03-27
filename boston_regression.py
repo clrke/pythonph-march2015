@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 
 boston = load_boston()
 
+print boston.data
+
+print boston.DESCR
+
 regressor = SVR(gamma=0.001).fit(boston.data, boston.target)
 prediction = regressor.predict(boston.data)
 
